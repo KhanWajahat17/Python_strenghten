@@ -1,0 +1,20 @@
+print("THIS PROGRAM IS DESIGNED TO FIND A KEY THAT HAS HIGHEST VALUE IN A DICTIONARY...")
+
+item_price = {}
+highest_value = None
+highest_key = ""
+try:
+    limit = int(input("Enter the key limits: =--->  "))
+    if limit >= 1:
+        for i in range(1,limit+1,1):
+            itm = input(f'Enter the {i} item: ')
+            price = int(input(f'Enter the price of {itm}: '))    
+            item_price.update({itm : price})
+            if highest_value is None or price > highest_value:
+                highest_value = price
+                highest_key = itm
+        print({highest_key:highest_value})
+    else:
+        print("Please Enter at least One item")
+except ValueError:
+    print("Attention! Please enter an integer not string or decimal......")
